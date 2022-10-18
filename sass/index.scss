@@ -66,6 +66,24 @@ nav{
     font-size: var(--fs-link);
     font-family: var(--ff-link);
     color: var(--fc-link);
+
+    & p{
+        pointer-events: none;
+    }
+
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline 2.5px white;
+    }
+
+    &:hover p{
+        margin-bottom: 5px;
+    }
+}
+
+.highlight{
+    color: white;
+    text-shadow: 1px 1px 15px rgb(251, 255, 0);
 }
 
 .link:hover{
@@ -74,9 +92,5 @@ nav{
 
 .nav-burger{
     display: none;
-}
-
-.highlight{
-    color: white;
 }
 
