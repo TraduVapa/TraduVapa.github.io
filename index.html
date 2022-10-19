@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/navbar.css">
 </head>
 <body>
     <nav>
@@ -16,21 +17,35 @@
             <p>Github Project</p>
         </div>
         <div class="nav-links">
-            <div class="link">
+            <div class="link l-nav">
               <p>Parallax</p>
             </div>
-            <div class="link">
+            <div class="link l-nav">
               <p>3D Model</p>
             </div>
-            <div class="link">
+            <div class="link l-nav">
               <p>Statistics</p>
             </div>
         </div>
         <div class="nav-burger">
-
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="nav-burger-slide visibility">
+          <div class="link l-burger">
+            <p>Parallax</p>
+          </div>
+          <div class="link l-burger">
+            <p>3D Model</p>
+          </div>
+          <div class="link l-burger">
+            <p>Statistics</p>
+          </div>
         </div>
     </nav>
 
     <script src="./javascript/link-animation.js"></script>
+    <script src="./javascript/burger-behavior.js"></script>
 </body>
 </html>

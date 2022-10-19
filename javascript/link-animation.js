@@ -1,35 +1,41 @@
-var links = document.getElementsByClassName('link');
+var link = document.getElementsByClassName('l-nav');
 
 //Add the mouseenter event to all "link" elements
-for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener("mouseenter", (e) => {
+for (let i = 0; i < link.length; i++) {
+    link[i].addEventListener("mouseenter", (e) => {
 
-        //Push every letters in the link's word into an Array for later treatment
-        var text = links[i].textContent;
-        var chara = [];
-        for (var o = 0; o < text.length; o++) {
-            chara.push(text.charAt(o));
+        // Push every letters in the link's word into an Array for later treatment
+        let currentText = link[i].textContent.trim();
+        let currentCharactersList = [];
+        for (var o = 0; o < currentText.length; o++) {
+            currentCharactersList.push(currentText.charAt(o));
         }
 
-        var newChara = chara.slice();
+        //Add the animation to all letters delay by .030s
+        let newCharactersList = currentCharactersList.slice();
         let newText = "";
-        for (var x = 0; x < text.length + 1; x++) {
-            task(x);
-        }
-        
-        function task(x) {
-            setTimeout(function () {
-                // Add tasks to do
-                newChara[x] = "<span class=\"highlight\">" + chara[x] + "</span>";
-                for (var relou = 0; relou < chara.length; relou++) {
-                    newText += newChara[relou];
-                }
-                links[i].innerHTML = "<p>" + newText + "</p>";
+        for (let x = 0; x < currentText.length + 1; x++) {
+            //Reset initialized variables
+            newText = "";
+            newCharactersList = currentCharactersList.slice();
 
-                newText = "";
-                newChara = chara.slice();
-                // Add tasks to do
-            }, 30 * x);
+            task(x, i, newCharactersList, currentCharactersList, newText);
         }
-    }, false);
+    });
 }
+
+//Change the current link's text to the new one
+function task(x, i, newCharactersList, currentCharactersList, newText) {
+    setTimeout(function () {
+        //Form the newText to add to the html
+        newCharactersList[x] = "<span class=\"highlight\">" + currentCharactersList[x] + "</span>";
+        for (var it = 0; it < currentCharactersList.length; it++) {
+            newText += newCharactersList[it];
+        }
+        //Add the animation to the html
+        link[i].innerHTML = "<p>" + newText + "</p>";
+
+    }, 30 * x);
+}
+
+         
