@@ -2,6 +2,10 @@
     font-family: 'Oswald';
     src: url('/fonts/Oswald-VariableFont_wght.ttf');
   }
+@font-face {
+    font-family: 'Oxygen';
+    src: url('/fonts/Oxygen-Regular.ttf.ttf');
+}
 
 :root{
     --bg-body: hsl(216, 28%, 7%);
@@ -11,6 +15,7 @@
     --fc-navbar-text: hsl(0, 0%, 89%);
     --fs-link: clamp(1.2rem, 1.2rem + 40%, 2.2rem);
     --ff-link: 'Oswald', 'sans-serif';
+    --ff-text: 'Oxygen', 'sans-serif';
 
     & p{
         margin: 0;
